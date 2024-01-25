@@ -1,11 +1,7 @@
 #include <stdio.h>
-#include "meow.h"
+#include "funct.h"
 
 int main(void) {
-    for (int i = 0; i < 5; i++) {
-        meow1();
-    }
-    for (int i = 0; i < 4; i++) {
-        meow();
-    }
+    star(5);
+    strip(4);
 }
