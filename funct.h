@@ -1,5 +1,9 @@
-void meow(void) {
-    printf("meow\n");
+void meow(int n) {
+    int i = 0;
+    while (i < n) {
+        printf("meow\n");
+        i++;
+    }
 }
 
 void star(int n) {
