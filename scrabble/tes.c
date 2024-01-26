@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <cs50.h>
 
 // Function prototypes
 int getPoints(char word[]);
@@ -49,7 +48,8 @@ int getPoints(char word[]) {
 
 // Function to prompt the user for a word
 void promptForWord(char player[], char word[]) {
-    get_string("%s, enter your word: ", player);
+    printf("%s, enter your word: ", player);
+    scanf("%s", word);
 }
 
 // Function to print each player's score
