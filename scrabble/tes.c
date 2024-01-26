@@ -15,11 +15,13 @@ int main() {
     // Prompt for Player 1's word
     promptForWord("Player 1", word1);
     int score1 = getPoints(word1);
-    printPlayerScore("Player 1", score1);
 
     // Prompt for Player 2's word
     promptForWord("Player 2", word2);
     int score2 = getPoints(word2);
+
+    // Print each player's score
+    printPlayerScore("Player 1", score1);
     printPlayerScore("Player 2", score2);
 
     // Print the winner or tie
