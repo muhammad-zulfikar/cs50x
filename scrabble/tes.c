@@ -28,12 +28,12 @@ int getPoints(char word[]) {
     int score = 0;
     int i = 0;
 
-    while (word[i] != '\0') {
-        if (word[i] >= 'A' && word[i] <= 'Z') {
-            score += points[word[i] - 'A'];
-        }
+    if (currentChar >= 'A' && currentChar <= 'Z') {
+        currentChar = currentChar - 'A' + 'a';
+    }
 
-        i++;
+    if (currentChar >= 'a' && currentChar <= 'z') {
+        score += points[currentChar - 'a'];
     }
 
     return score;
