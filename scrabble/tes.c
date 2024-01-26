@@ -4,7 +4,7 @@
 int getPoints(char word[]);
 void promptForWord(char player[], char word[]);
 void printWinnerOrTie(int score1, int score2);
-void printPlayerScore(char player[], int score);
+void printPlayerScore(char player[], int* score);
 
 // Global array for letter scores
 int points[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
@@ -21,8 +21,8 @@ int main() {
     int score2 = getPoints(word2);
 
     // Print each player's score
-    printPlayerScore("Player 1", score1);
-    printPlayerScore("Player 2", score2);
+    printPlayerScore("Player 1", &score1);
+    printPlayerScore("Player 2", &score2);
 
     // Print the winner or tie
     printWinnerOrTie(score1, score2);
@@ -53,8 +53,8 @@ void promptForWord(char player[], char word[]) {
 }
 
 // Function to print each player's score
-void printPlayerScore(char player[], int score) {
-    printf("%s's score: %d\n", player, score);
+void printPlayerScore(char player[], int* score) {
+    printf("%s's score: %d\n", player, *score);
 }
 
 // Function to print the winner or tie
