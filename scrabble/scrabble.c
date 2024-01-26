@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <cs50.h>
 
 // Function to calculate the score of a word
-int calculateScore(char *word) {
+int calculateScore(char word[]) {
     int score = 0;
 
-    while (*word != '\0') {
-        char currentChar = *word;
+    for (int i = 0; word[i] != '\0'; i++) {
+        char currentChar = word[i];
 
         // Manually convert lowercase to uppercase
         if (currentChar >= 'a' && currentChar <= 'z') {
@@ -20,10 +19,8 @@ int calculateScore(char *word) {
         // Checking if the character is a valid uppercase letter
         if (index >= 0 && index < 26) {
             // Adding the corresponding score to the total
-            score += (indexToScore[index]);
+            score += indexToScore[index];
         }
-
-        word++;
     }
 
     return score;
@@ -34,13 +31,15 @@ int main() {
     int indexToScore[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
     // Input words for Player 1 and Player 2
-    char *word1, *word2;
+    char word1[100], word2[100];
 
     // Prompting for Player 1's word
-    word1 = GetString("Player 1, enter your word: ");
+    printf("Player 1, enter your word: ");
+    scanf("%s", word1);
 
     // Prompting for Player 2's word
-    word2 = GetString("Player 2, enter your word: ");
+    printf("Player 2, enter your word: ");
+    scanf("%s", word2);
 
     // Calculating scores for both players
     int score1 = calculateScore(word1);
@@ -54,10 +53,6 @@ int main() {
     } else {
         printf("Tie!\n");
     }
-
-    // Freeing the memory allocated by GetString
-    free(word1);
-    free(word2);
 
     return 0;
 }
