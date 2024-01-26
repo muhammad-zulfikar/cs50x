@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -16,8 +16,8 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
-    float L = (float)letters / words * 100;
-    float S = (float)sentences / words * 100;
+    float L = (float) letters / words * 100;
+    float S = (float) sentences / words * 100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
 
     int grade = round(index);
