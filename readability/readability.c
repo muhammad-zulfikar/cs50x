@@ -64,7 +64,6 @@ int count_words(string text)
             count++;
         }
     }
-    // Adding 1 to account for the last word
     return count + 1;
 }
 
