@@ -28,17 +28,20 @@ int getPoints(char word[]) {
     int score = 0;
     int i = 0;
 
-    if (currentChar >= 'A' && currentChar <= 'Z') {
-        currentChar = currentChar - 'A' + 'a';
-    }
+    while (word[i] != '\0') {
+        char currentChar = word[i];
 
-    if (currentChar >= 'a' && currentChar <= 'z') {
-        score += points[currentChar - 'a'];
-    }
+        if (currentChar >= 'A' && currentChar <= 'Z') {
+            currentChar = currentChar - 'A' + 'a';
+        }
 
-    return score;
+        if (currentChar >= 'a' && currentChar <= 'z') {
+            score += points[currentChar - 'a'];
+        }
+
+        i++;
+    }
 }
-
 
 void promptForWord(char player[], char word[]) {
     printf("%s, enter your word: ", player);
