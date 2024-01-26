@@ -41,6 +41,8 @@ int getPoints(char word[]) {
 
         i++;
     }
+    
+    return score;
 }
 
 void promptForWord(char player[], char word[]) {
