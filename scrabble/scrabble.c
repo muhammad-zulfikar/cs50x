@@ -21,6 +21,22 @@ int main() {
 
   char word1[20], word2[20];
 
-  
+  printf("Player 1, enter your word: ");
+  scanf("%s", word1);
 
+  printf("Player 2, enter your word: ");
+  scanf("%s", word2);
+
+  int score1 = getPoints(word1);
+  int score2 = getPoints(word2);
+
+  if (score1 > score2) {
+      printf("Player 1 wins!\n");
+  } else if (score2 > score1) {
+      printf("Player 2 wins!\n");
+  } else {
+      printf("Tie!\n");
+  }
+
+  return 0;
 }
