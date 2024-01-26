@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Function to calculate the score of a word
-int calculateScore(char *word) {
+int calculateScore(char *word, int *indexToScore) {
     int score = 0;
 
     while (*word != '\0') {
@@ -44,8 +44,8 @@ int main() {
     scanf("%s", word2);
 
     // Calculating scores for both players
-    int score1 = calculateScore(word1);
-    int score2 = calculateScore(word2);
+    int score1 = calculateScore(word1, indexToScore);
+    int score2 = calculateScore(word2, indexToScore);
 
     // Determining the winner or if it's a tie
     if (score1 > score2) {
