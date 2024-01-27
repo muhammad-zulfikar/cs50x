@@ -11,6 +11,11 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
+    if !only_digits(argv[1])
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
 }
 
-bool only_digit
