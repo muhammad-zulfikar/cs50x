@@ -39,21 +39,29 @@ int main(int argc, string argv[])
 
 bool only_digits(char *s)
 {
-    for (int i = 0, n = strlen(s); i < n; i++) {
-        if (!isdigit(s[i])) {
+    int n = strlen(s);
+    for (int i = 0; i < n; i++)
+    {
+        if (!isdigit(s[i]))
+        {
             return false;
         }
     }
     return true;
 }
 
-// Function to rotate a character by a given number of positions
-char rotate(char c, int n) {
-    if (isupper(c)) {
+char rotate(char c, int n)
+{
+    if (isupper(c))
+    {
         return (c - 'A' + n) % 26 + 'A';
-    } else if (islower(c)) {
+    }
+    else if (islower(c))
+    {
         return (c - 'a' + n) % 26 + 'a';
-    } else {
+    }
+    else
+    {
         return c;
     }
 }
