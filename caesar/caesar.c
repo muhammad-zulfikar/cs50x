@@ -5,7 +5,7 @@
 
 void encrypt(char *plaintext, int key);
 
-int main(int argc, string argv[]) {
+int main(int argc, str argv[]) {
     if (argc != 2) {
         printf("Usage: ./caesar key\n");
         return 1;
