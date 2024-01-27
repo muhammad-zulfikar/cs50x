@@ -1,58 +1,64 @@
+#include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
 
-void encrypt(char *plaintext, int key);
+// Function prototypes
+bool only_digits(string s);
+char rotate(char c, int n);
 
-int main(int argc, char *argv[]) {
-    // Check for the correct number of command-line arguments
+int main(int argc, string argv[]) {
+    // Make sure program was run with just one command-line argument
     if (argc != 2) {
         printf("Usage: ./caesar key\n");
         return 1;
     }
 
-    // Check if the key consists of only decimal digits
-    for (int i = 0; i < strlen(argv[1]); i++) {
-        if (!isdigit(argv[1][i])) {
-            printf("Usage: ./caesar key\n");
-            return 1;
-        }
+    // Make sure every character in argv[1] is a digit
+    if (!only_digits(argv[1])) {
+        printf("Usage: ./caesar key\n");
+        return 1;
     }
 
-    // Convert the key to an integer
+    // Convert argv[1] from a string to an int
     int key = atoi(argv[1]);
 
-    // Get plaintext from the user
-    char plaintext[1000]; // Assuming the maximum input size is 1000 characters
+    // Prompt user for plaintext
     printf("plaintext: ");
-    fgets(plaintext, sizeof(plaintext), stdin);
+    string plaintext = get_string();
 
-    // Encrypt the plaintext using the Caesar cipher
-    encrypt(plaintext, key);
+    // Print ciphertext
+    printf("ciphertext: ");
+
+    // For each character in the plaintext:
+    for (int i = 0, n = strlen(plaintext); i < n; i++) {
+        // Rotate the character if it's a letter
+        printf("%c", rotate(plaintext[i], key));
+    }
+
+    printf("\n");
 
     return 0;
 }
 
-void encrypt(char *plaintext, int key) {
-    printf("ciphertext: ");
-
-    for (int i = 0; i < strlen(plaintext); i++) {
-        char c = plaintext[i];
-
-        // Check if the character is an uppercase letter
-        if (isupper(c)) {
-            printf("%c", 'A' + (c - 'A' + key) % 26);
-        }
-        // Check if the character is a lowercase letter
-        else if (islower(c)) {
-            printf("%c", 'a' + (c - 'a' + key) % 26);
-        }
-        // Non-alphabetical characters remain unchanged
-        else {
-            printf("%c", c);
+// Function to check if a string consists of only digits
+bool only_digits(string s) {
+    for (int i = 0, n = strlen(s); i < n; i++) {
+        if (!isdigit(s[i])) {
+            return false;
         }
     }
+    return true;
+}
 
-    printf("\n");
+// Function to rotate a character by a given number of positions
+char rotate(char c, int n) {
+    if (isupper(c)) {
+        return (c - 'A' + n) % 26 + 'A';
+    } else if (islower(c)) {
+        return (c - 'a' + n) % 26 + 'a';
+    } else {
+        return c;
+    }
 }
