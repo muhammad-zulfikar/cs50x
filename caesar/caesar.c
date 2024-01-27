@@ -23,3 +23,7 @@ int main(int argc, string argv[])
 
     printf("plaintext: ");
     string plaintext = get_string();
+
+    printf("ciphertext: ");
+
+    for (i = 0, n < strlen(plaintext), i++)
