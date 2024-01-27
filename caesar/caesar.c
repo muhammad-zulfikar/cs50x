@@ -27,8 +27,7 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
 
-    int n;
-    n < strlen(plaintext);
+    int n = strlen(plaintext);
     for (int i = 0; i < n; i++)
     {
         printf("%c", rotate(plaintext[i], key));
@@ -38,7 +37,8 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool only_digits(char *s) {
+bool only_digits(char *s)
+{
     for (int i = 0, n = strlen(s); i < n; i++) {
         if (!isdigit(s[i])) {
             return false;
