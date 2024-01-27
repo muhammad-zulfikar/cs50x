@@ -19,3 +19,7 @@ int main(int argc, string argv[])
     }
 }
 
+    int key = atoi(argv[1]);
+
+    printf("plaintext: ");
+    string plaintext = get_string();
