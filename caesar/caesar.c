@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 
     // Prompt user for plaintext
     printf("plaintext: ");
-    char *plaintext = get_string();
+    char *plaintext = GetString();
 
     // Print ciphertext
     printf("ciphertext: ");
