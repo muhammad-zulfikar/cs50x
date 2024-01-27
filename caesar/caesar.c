@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-bool only_digits(string s);
-string rotate(string c, int n);
+bool only_digits(char *s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -37,7 +37,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool only_digits(string s)
+bool only_digits(char *s)
 {
     int n = strlen(s);
     for (int i = 0; i < n; i++)
@@ -50,7 +50,7 @@ bool only_digits(string s)
     return true;
 }
 
-string rotate(string c, int n)
+char rotate(char c, int n)
 {
     if (isupper(c))
     {
