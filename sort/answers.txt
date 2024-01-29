@@ -1,11 +1,24 @@
-sort1 uses: TODO
+sort1 uses:
+    time ./sort1 random50000.txt
+        real    0m6.743s
+    time ./sort1 reversed50000.txt
+        real    0m5.536s
+    time ./sort1 sorted50000.txt
+        real    0m1.186s
 
-How do you know?: TODO
+How do you know?:
 
-sort2 uses: TODO
+sort2 uses:
+    time ./sort2 random50000.txt
+        real    0m0.923s
+    time ./sort2 reversed50000.txt
+        real    0m1.079s
+    
 
-How do you know?: TODO
 
-sort3 uses: TODO
+How do you know?:
 
-How do you know?: TODO
+sort3 uses:
+real    0m2.792s
+
+How do you know?:
