@@ -1,4 +1,4 @@
-sort1 uses: selection sort.
+sort1 uses: selection sort
 
 How do you know?:
 
@@ -13,7 +13,7 @@ it takes a longer time for a list of random numbers, might be using a slower qua
 and that noticable faster time for already sorted list, which is a key property of using selection sort algorithm.
 
 
-sort2 uses: merge sort.
+sort2 uses: merge sort
 
 How do you know?:
 - time ./sort2 random50000.txt
@@ -27,7 +27,7 @@ based on the significantly smaller runtimes than other sort method in all of the
 sort2 is likely using more efficient algorithm, most likely merge sort O(n log n).
 
 
-sort3 uses: bubble sort.
+sort3 uses: selection sort
 
 How do you know?:
 - time ./sort3 random50000.txt
