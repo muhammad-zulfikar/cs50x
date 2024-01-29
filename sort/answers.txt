@@ -9,7 +9,7 @@ How do you know?:
 - time ./sort1 sorted50000.txt
   real    0m1.186s
 
-it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method.
+it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method (n2).
 and that noticable faster time for already sorted list, which is a key property of using selection sort algorithm.
 
 
@@ -24,17 +24,18 @@ How do you know?:
   real    0m0.893s
 
 based on the significantly smaller times than other sort method in all of the datasets,
-sort2 is likely using more efficient algorithm, which possibly merge sort O(n log n).
+sort2 is likely using more efficient algorithm, most likely merge sort O(n log n).
 
 
 sort3 uses: bubble sort.
 
 How do you know?:
 - time ./sort3 random50000.txt
-    real    0m2.792s
+  real    0m2.792s
 - time ./sort3 reversed50000.txt
-    real    0m3.160s
+  real    0m3.160s
 - time ./sort3 sorted50000.txt
-    real    0m3.058s
+  real    0m3.058s
+  
 Based on the larger times for both random and reversed datasets, and the similar times for sorted datasets,
 sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
