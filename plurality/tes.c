@@ -40,9 +40,10 @@ int main(int argc, string argv[])
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        candidates[i].name = argv[i + 1];
+        strcpy(candidates[i].name, argv[i + 1]);
         candidates[i].votes = 0;
     }
+
 
     int voter_count = get_int("Number of voters: ");
 
