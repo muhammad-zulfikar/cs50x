@@ -20,8 +20,8 @@ How do you know?:
     real    0m0.778s
 - time ./sort2 sorted50000.txt
     real    0m0.893s
-Based on the smaller times for both random and reversed datasets, sort2 is likely using
-more efficient algorithm, possibly merge sort.
+Based on the significantly smaller times for both random and reversed datasets than other sort method,
+sort2 is likely using more efficient algorithm, possibly merge sort.
 
 
 sort3 uses: bubble sort.
