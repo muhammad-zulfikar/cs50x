@@ -37,6 +37,5 @@ How do you know?:
 - time ./sort3 sorted50000.txt
   real    0m3.058s
 
-the runtimes are all similar regardless of input order. Bubble sort is O(n^2) in all cases.
-Based on the larger times for both random and reversed datasets, and the similar times for sorted datasets,
+the runtimes are all similar regardless of input order. sort3 is O(n^2) in all cases.
 sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
