@@ -1,4 +1,4 @@
-sort1 uses: selection sort
+sort1 uses: selection sort.
 
 How do you know?:
 - time ./sort1 random50000.txt
@@ -7,9 +7,11 @@ How do you know?:
     real    0m5.536s
 - time ./sort1 sorted50000.txt
     real    0m1.186s
+Based on the larger times for random and reversed datasets, and the smaller time for a sorted dataset,
+sort1 is likely using O(n^2) sorting algorithm, possibly selection sort.
 
-sort2 uses:
 
+sort2 uses: merge sort.
 
 How do you know?:
 - time ./sort2 random50000.txt
@@ -18,10 +20,11 @@ How do you know?:
     real    0m0.778s
 - time ./sort2 sorted50000.txt
     real    0m0.893s
+Based on the smaller times for both random and reversed datasets, sort2 is likely using
+more efficient algorithm, possibly merge sort.
 
 
-sort3 uses:
-
+sort3 uses: bubble sort.
 
 How do you know?:
 - time ./sort3 random50000.txt
@@ -30,3 +33,5 @@ How do you know?:
     real    0m3.160s
 - time ./sort3 sorted50000.txt
     real    0m3.058s
+Based on the larger times for both random and reversed datasets, and the similar times for sorted datasets,
+sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
