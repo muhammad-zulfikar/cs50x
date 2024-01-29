@@ -1,14 +1,16 @@
 sort1 uses: selection sort.
 
 How do you know?:
+
 - time ./sort1 random50000.txt
-    real    0m6.743s
+  real    0m6.743s
 - time ./sort1 reversed50000.txt
-    real    0m5.536s
+  real    0m5.536s
 - time ./sort1 sorted50000.txt
-    real    0m1.186s
-Based on the larger times for random and reversed datasets, and the smaller time for a sorted dataset,
-sort1 is likely using O(n^2) sorting algorithm, possibly selection sort (n2).
+  real    0m1.186s
+
+it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method.
+and that noticable faster time for a sorted list, indicating a key it might be using a faster algorithm for already sorted data.
 
 
 sort2 uses: merge sort.
