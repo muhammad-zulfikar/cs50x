@@ -23,7 +23,7 @@ How do you know?:
 - time ./sort2 sorted50000.txt
   real    0m0.893s
 
-based on the significantly smaller times than other sort method in all of the datasets,
+based on the significantly smaller runtimes than other sort method in all of the datasets,
 sort2 is likely using more efficient algorithm, most likely merge sort O(n log n).
 
 
@@ -36,6 +36,7 @@ How do you know?:
   real    0m3.160s
 - time ./sort3 sorted50000.txt
   real    0m3.058s
-  
+
+the runtimes are all similar regardless of input order. Bubble sort is O(n^2) in all cases.
 Based on the larger times for both random and reversed datasets, and the similar times for sorted datasets,
 sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
