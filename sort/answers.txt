@@ -8,7 +8,7 @@ How do you know?:
 - time ./sort1 sorted50000.txt
     real    0m1.186s
 Based on the larger times for random and reversed datasets, and the smaller time for a sorted dataset,
-sort1 is likely using O(n^2) sorting algorithm, possibly selection sort.
+sort1 is likely using O(n^2) sorting algorithm, possibly selection sort (n2).
 
 
 sort2 uses: merge sort.
@@ -21,7 +21,7 @@ How do you know?:
 - time ./sort2 sorted50000.txt
     real    0m0.893s
 Based on the significantly smaller times for both random and reversed datasets than other sort method,
-sort2 is likely using more efficient algorithm, possibly merge sort.
+sort2 is likely using more efficient algorithm, possibly merge sort O(n log n).
 
 
 sort3 uses: bubble sort.
