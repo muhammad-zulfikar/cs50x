@@ -9,7 +9,7 @@ How do you know?:
 - time ./sort1 sorted50000.txt
   real    0m1.186s
 
-it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method (n2).
+it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method O(n^2).
 and that noticable faster time for already sorted list, which is a key property of using selection sort algorithm.
 
 
@@ -37,5 +37,5 @@ How do you know?:
 - time ./sort3 sorted50000.txt
   real    0m3.058s
 
-the runtimes are all similar regardless of input order. sort3 is O(n^2) in all cases.
+the runtimes are all similar regardless of input order. sort3 demonstrating O(n^2) in all cases.
 sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
