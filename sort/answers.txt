@@ -38,4 +38,4 @@ How do you know?:
   real    0m3.058s
 
 the runtimes are all similar regardless of input order. sort3 demonstrating O(n^2) in all cases.
-sort3 is likely using a quadratic-time sorting algorithm, possibly bubble sort.
+sort3 is likely using bubble sort method.
