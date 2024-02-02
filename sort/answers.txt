@@ -1,0 +1,19 @@
+sort1 uses: bubble sort
+
+How do you know?:
+the runtimes are all similar regardless of input order. sort3 demonstrating O(n^2) in all cases.
+sort1 is likely using bubble sort method.
+
+
+sort2 uses: merge sort
+
+How do you know?:
+based on the significantly smaller runtimes than other sort method in all of the datasets,
+sort2 is likely using more efficient algorithm, most likely merge sort O(n log n).
+
+
+sort3 uses: selection sort
+
+How do you know?:
+it takes a longer time for a list of random numbers, might be using a slower quadratic-time sorting method O(n^2).
+and that noticable faster time for already sorted list, which is a key property of using selection sort algorithm.
