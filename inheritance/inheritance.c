@@ -38,40 +38,54 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
-    // TODO: Allocate memory for new person
+    // Allocate memory for new person
+    person *new_person = malloc(sizeof(person));
 
     // If there are still generations left to create
     if (generations > 1)
     {
-        // Create two new parents for current person by recursively calling create_family
+        // Create two new parents for the current person by recursively calling create_family
         person *parent0 = create_family(generations - 1);
         person *parent1 = create_family(generations - 1);
 
-        // TODO: Set parent pointers for current person
+        // Set parent pointers for the current person
+        new_person->parents[0] = parent0;
+        new_person->parents[1] = parent1;
 
-        // TODO: Randomly assign current person's alleles based on the alleles of their parents
+        // Randomly assign the current person's alleles based on the alleles of their parents
+        new_person->alleles[0] = parent0->alleles[rand() % 2];
+        new_person->alleles[1] = parent1->alleles[rand() % 2];
     }
-
-    // If there are no generations left to create
-    else
+    else // If there are no more generations left to create
     {
-        // TODO: Set parent pointers to NULL
+        // Set parent pointers to NULL
+        new_person->parents[0] = NULL;
+        new_person->parents[1] = NULL;
 
-        // TODO: Randomly assign alleles
+        // Randomly assign alleles
+        new_person->alleles[0] = random_allele();
+        new_person->alleles[1] = random_allele();
     }
 
-    // TODO: Return newly created person
-    return NULL;
+    // Return the newly created person
+    return new_person;
 }
 
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    // TODO: Handle base case
+    // Handle base case
+    if (p == NULL)
+    {
+        return;
+    }
 
-    // TODO: Free parents recursively
+    // Free parents recursively
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
 
-    // TODO: Free child
+    // Free the child
+    free(p);
 }
 
 // Print each family member and their alleles.
@@ -107,7 +121,7 @@ void print_family(person *p, int generation)
         printf("Grandparent (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
     }
 
-    // Print parents of current generation
+    // Print parents of the current generation
     print_family(p->parents[0], generation + 1);
     print_family(p->parents[1], generation + 1);
 }
